@@ -1,0 +1,161 @@
+<head>
+   <title>Chemestry charts</title>
+   <script src=".\Chart.bundle.min.js"></script>
+   <script src=".\chartjs-plugin-datalabels"></script>
+   <script src=".\jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <style type="text/css">
+       #canvas1 {
+           height: 400px;
+           width: 800px;
+       }
+       #canvas2 {
+           height: 800px;
+           width: 800px;
+       }
+       #canvas3 {
+           height: 400px;
+           width: 800px;
+       }
+   </style>
+</head>
+<body>
+   <div id="canvas1"><canvas id="chart1" width="800" height="400"></canvas></div>
+   <div id="canvas2"><canvas id="chart2" width="800" height="700"></canvas></div>
+   <div id="canvas3"><canvas id="chart3" width="800" height="400"></canvas></div>
+   <script>
+       var popCanvas1 =  document.getElementById("chart1").getContext("2d");
+       var barChart1 = new Chart(popCanvas1, {
+           type: 'bar',
+           data: {
+               labels: [ "0 - 10", "11 - 20", "21 - 30", "31 - 40", "41 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 90", "91 - 100" ],
+               datasets: [{
+                   data: [16, 21, 15, 28, 39, 38, 34, 34, 22, 15],
+                   backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)'],
+               }]
+           },
+           options: {
+               title: {
+                   display: true,
+                   text: 'Распределение участников по баллам.'
+               },
+               legend: {
+                   display: false
+               },
+               scales: {
+                   yAxes: [{
+                       ticks: {
+                           beginAtZero: true
+                       }
+                   }]
+               },
+               plugins: {
+                   datalabels: {
+                       anchor: "end",
+                       formatter: function(value, context) {
+                           return context.chart.data[context.dataIndex];
+                       }
+                   }
+               },
+           }
+       });
+       var popCanvas2 =  document.getElementById("chart2").getContext("2d");
+       var barChart2 = new Chart(popCanvas2, {
+           type: 'horizontalBar',
+           data: {
+               labels: [ "ЭЛИСТА", "Городовиковский район", "Кетченеровская район", "Лаганский район", "Малодербетовский район", "Октябрьский район", "Приютненский район", "Сарпинский район", "Целинный район", "Черноземельский район", "Юстинский район", "Яшалтинский район", "Яшкульский район", "Ики-Бурульский район" ],
+               datasets: [{
+                   data: [60.6, 49.9, 49.5, 38.6, 53.5, 39.6, 42.8, 28.5, 42.4, 34.8, 64.7, 50.4, 38.5, 55.9],
+                   backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(123, 99, 132, 0.6)', 'rgba(156, 162, 235, 0.6)', 'rgba(178, 206, 86, 0.6)', 'rgba(234, 192, 192, 0.6)'],
+               }]
+           },
+           options: {
+               title: {
+                   display: true,
+                   text: 'Распределение баллов по районам.'
+               },
+               legend: {
+                   display: false
+               },
+               scales: {
+                   yAxes: [{
+                       ticks: {
+                           beginAtZero: true
+                       }
+                   }]
+               },
+               plugins: {
+                   datalabels: {
+                       anchor: "end",
+                       formatter: function(value, context) {
+                           return context.chart.data[context.dataIndex];
+                       }
+                   }
+               },
+           }
+       });
+       var popCanvas3 =  document.getElementById("chart3").getContext("2d");
+       var barChart3 = new Chart(popCanvas3, {
+           type: 'bar',
+           data: {
+               labels: [ "Задание 1", "Задание 2", "Задание 3", "Задание 4", "Задание 5", "Задание 6" ],
+               datasets: [
+                   {
+                       label: "0 баллов",
+                       backgroundColor: "rgba(255, 99, 132, 0.6)",
+                       data: [128, 121, 101, 144, 160, 150]
+                   },
+                   {
+                       label: "1 балл",
+                       backgroundColor: "rgba(54, 162, 235, 0.6)",
+                       data: [30, 32, 27, 18, 38, 53]
+                   },
+                   {
+                       label: "2 балла",
+                       backgroundColor: "rgba(255, 206, 86, 0.6)",
+                       data: [104, 109, 20, 13, 13, 11]
+                   },
+                   {
+                       label: "3 балла",
+                       backgroundColor: "rgba(75, 192, 192, 0.6)",
+                       data: [0, 0, 51, 18, 10, 48]
+                   },
+                   {
+                       label: "4 балла",
+                       backgroundColor: "rgba(153, 102, 255, 0.6)",
+                       data: [0, 0, 63, 25, 41, 0]
+                   },
+                   {
+                       label: "5 баллов",
+                       backgroundColor: "rgba(255, 159, 64, 0.6)",
+                       data: [0, 0, 0, 44, 0, 0]
+                   },
+               ],
+           },
+           options: {
+               title: {
+                   display: true,
+                   text: 'Распределение баллов по участникам.'
+               },
+               legend: {
+                   display: true
+               },
+               scales: {
+                   yAxes: [{
+                       ticks: {
+                           beginAtZero: true
+                       }
+                   }]
+               },
+               plugins: {
+                   datalabels: {
+                       anchor: "end",
+                       formatter: function(value, context) {
+                           return context.chart.data[context.dataIndex];
+                       }
+                   }
+               },
+           }
+       });
+   </script>
+</body>

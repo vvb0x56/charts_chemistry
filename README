@@ -1,0 +1,2 @@
+start with 
+./gen_chart_edu.py chemistry_example.csv  > index.html
