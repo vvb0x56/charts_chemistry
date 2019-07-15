@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawPieChart);
+      google.charts.setOnLoadCallback(drawColumnChart);
+
+      // PIE CHART 
+      function drawPieChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Соотношение участников ЕГЭ 2019'],
+          ['Женщины',   224],
+          ['Мужчины',   115]
+        ]);
+
+        var options = {
+          title: 'Соотношение участников ЕГЭ 2019'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+      // END PIE CHART
+
+      // RANGES CHART 
+      function drawColumnChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Диапазон", "Число студентов по балам", { role: "style" } ],
+          ["от 0 до 10",   20, "blue"],
+          ["от 11 до 20",  19, "blue"],
+          ["от 21 до 30",  19, "blue"],
+          ["от 31 до 40",  48, "blue"],
+          ["от 41 до 50",  56, "blue"],
+          ["от 51 до 60",  57, "blue"],
+          ["от 61 до 70",  44, "blue"],
+          ["от 71 до 80",  46, "blue"],
+          ["от 81 до 90",  14, "blue"],
+          ["от 91 до 100", 16, "blue"],
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
+        var options = {
+          title: "Распределение учащихся по баллам",
+          width: 1200,
+          height: 500,
+          bar: {groupWidth: "95%"},
+          legend: { position: "bottom",
+                    alignment: "center"},
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart"));
+        chart.draw(view, options);
+      }
+      // END OF RANGES CHART 
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="columnchart" style="width: 1200px; height: 300px;"></div>
+  </body>
+</html>
+
