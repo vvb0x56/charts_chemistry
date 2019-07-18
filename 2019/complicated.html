@@ -1,0 +1,276 @@
+<html>
+  <head>
+    <style>
+        #task1 {
+            position: absolute;
+            top: 60px;
+            left: 0px;
+        }
+        #task2 {
+            position: absolute;
+            top: 60px;
+            left: 300px;
+        }
+        #task3 {
+            position: absolute;
+            top: 60px;
+            left: 600px;
+        }
+        #task4 {
+            position: absolute;
+            top: 360px;
+            left: 0px;
+        }
+        #task5 {
+            position: absolute;
+            top: 360px;
+            left: 300px;
+        }
+        #task6 {
+            position: absolute;
+            top: 360px;
+            left: 600px;
+        }
+
+        #circle_0_bal {
+            position: absolute;
+            top: 630px;
+            left: 150px;
+            border-radius: 50%;
+            background: rgb(51, 102, 204);
+            width: 20px;
+            height: 20px;
+        }
+
+        #text_0_bal {
+            position: absolute;
+            top: 634px;
+            left: 174px;
+            font-family: 'Arial';
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        #circle_1_bal {
+            position: absolute;
+            top: 630px;
+            left: 250px;
+            border-radius: 50%;
+            background: rgb(220, 57, 18);
+            width: 20px;
+            height: 20px;
+        }
+
+        #text_1_bal {
+            position: absolute;
+            top: 634px;
+            left: 274px;
+            font-family: 'Arial';
+            font-size: 11px;
+            font-weight: bold;
+        }
+        #circle_2_bal {
+            position: absolute;
+            top: 630px;
+            left: 350px;
+            border-radius: 50%;
+            background: rgb(255, 153, 0);
+            width: 20px;
+            height: 20px;
+        }
+
+        #text_2_bal {
+            position: absolute;
+            top: 634px;
+            left: 374px;
+            font-family: 'Arial';
+            font-size: 11px;
+            font-weight: bold;
+        }
+        #circle_3_bal {
+            position: absolute;
+            top: 630px;
+            left: 450px;
+            border-radius: 50%;
+            background: rgb(16, 150, 24);
+            width: 20px;
+            height: 20px;
+        }
+        #text_3_bal {
+            position: absolute;
+            top: 634px;
+            left: 474px;
+            font-family: 'Arial';
+            font-size: 11px;
+            font-weight: bold;
+        }
+        #circle_4_bal {
+            position: absolute;
+            top: 630px;
+            left: 550px;
+            border-radius: 50%;
+            background: rgb(157, 10, 157);
+            width: 20px;
+            height: 20px;
+        }
+        #text_4_bal {
+            position: absolute;
+            top: 634px;
+            left: 574px;
+            font-family: 'Arial';
+            font-size: 11px;
+            font-weight: bold;
+        }
+        #circle_5_bal {
+            position: absolute;
+            top: 630px;
+            left: 650px;
+            border-radius: 50%;
+            background: rgb(0, 153, 198);
+            width: 20px;
+            height: 20px;
+        }
+        #text_5_bal {
+            position: absolute;
+            top: 634px;
+            left: 674px;
+            font-family: 'Arial';
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data1 = google.visualization.arrayToDataTable([
+          ['Бал', 'Участники'],
+          ['0 балов',     162],
+          ['1 бал',     43],
+          ['2 бала',     134]
+        ]);
+
+        var data2 = google.visualization.arrayToDataTable([
+          ['Бал', 'Участники'],
+          ['0 балов',     138],
+          ['1 бал',     9],
+          ['2 бала',     192]
+        ]);
+
+        var data3 = google.visualization.arrayToDataTable([
+          ['Бал', 'Участники'],
+          ['0 балов',   179],
+          ['1 бал',     41],
+          ['2 бала',    38],
+          ['3 бала',    35],
+          ['4 бала',    46]
+        ]);
+
+        var data4 = google.visualization.arrayToDataTable([
+          ['Бал', 'Участники'],
+          ['0 балов',   157],
+          ['1 бал',     24],
+          ['2 бала',    25],
+          ['3 бала',    30],
+          ['4 бала',    42],
+          ['5 балов',   61]
+        ]);
+
+        var data5 = google.visualization.arrayToDataTable([
+          ['Бал', 'Участники'],
+          ['0 балов',   196],
+          ['1 бал',     51],
+          ['2 бала',    31],
+          ['3 бала',    34],
+          ['4 бала',    27]
+        ]);
+
+        var data6 = google.visualization.arrayToDataTable([
+          ['Бал', 'Участники'],
+          ['0 балов',   206],
+          ['1 бал',     51],
+          ['2 бала',    16],
+          ['3 бала',    66]
+        ]);
+
+        var task1_options = {
+          title: '1 задание (макс. бал 2)',
+          pieHole: 0.2,
+          legend: 'none',
+          pieSliceText: 'value'
+        };
+          
+        var task2_options = {
+          title: '2 задание (макс. бал 2)',
+          pieHole: 0.2,
+          legend: 'none',
+          pieSliceText: 'value'
+        };
+
+        var task3_options = {
+          title: '3 задание (макс. бал 4)',
+          pieHole: 0.2,
+          legend: 'none',
+          pieSliceText: 'value'
+        };
+
+        var task4_options = {
+          title: '4 задание (макс. бал 5)',
+          pieHole: 0.2,
+          legend: 'none',
+          pieSliceText: 'value'
+        };
+
+        var task5_options = {
+          title: '5 задание (макс. бал 4)',
+          pieHole: 0.2,
+          legend: 'none',
+          pieSliceText: 'value'
+        };
+
+        var task6_options = {
+          title: '6 задание (макс. бал 3)',
+          pieHole: 0.2,
+          legend: 'none', 
+          pieSliceText: 'value'
+        };
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('task1'));
+        var chart2 = new google.visualization.PieChart(document.getElementById('task2'));
+        var chart3 = new google.visualization.PieChart(document.getElementById('task3'));
+        var chart4 = new google.visualization.PieChart(document.getElementById('task4'));
+        var chart5 = new google.visualization.PieChart(document.getElementById('task5'));
+        var chart6 = new google.visualization.PieChart(document.getElementById('task6'));
+        chart1.draw(data1, task1_options);
+        chart2.draw(data2, task2_options);
+        chart3.draw(data3, task3_options);
+        chart4.draw(data4, task4_options);
+        chart5.draw(data5, task5_options);
+        chart6.draw(data6, task6_options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="task1" style="width: 300px; height: 300px;"></div>
+    <div id="task2" style="width: 300px; height: 300px;"></div>
+    <div id="task3" style="width: 300px; height: 300px;"></div>
+    <div id="task4" style="width: 300px; height: 300px;"></div>
+    <div id="task5" style="width: 300px; height: 300px;"></div>
+    <div id="task6" style="width: 300px; height: 300px;"></div>
+    <div id="circle_0_bal"></div> 
+    <div id="circle_1_bal"></div> 
+    <div id="circle_2_bal"></div> 
+    <div id="circle_3_bal"></div> 
+    <div id="circle_4_bal"></div> 
+    <div id="circle_5_bal"></div> 
+
+    <div id="text_0_bal">0 балов</div> 
+    <div id="text_1_bal">1 бал</div> 
+    <div id="text_2_bal">2 бала</div> 
+    <div id="text_3_bal">3 бала</div> 
+    <div id="text_4_bal">4 бала</div> 
+    <div id="text_5_bal">5 балов</div> 
+  </body>
+</html>

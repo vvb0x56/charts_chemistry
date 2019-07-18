@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ["u", "Density", { role: "style" } ],
+                    ["101011 МБОУ 'СОШ № 15' (1)", 92,      "color: #66ff66;"],
+                    ["108008 МКОУ 'Сарпинская СОШ' (1)", 80,      "color: #6699ff;"],
+                    ["101001 МБОУ 'Элистинский лицей' (18)", 78.89,   "color: #66ff66;"],
+                    ["102004 МКОУ 'ГМГ им.Б.Б.Городовикова' (2)", 73,      "color: #6699ff;"],
+                    ["111002 МКОУ 'Цаганаманская СОШ №2' (2)", 73,      "color: #66ff66;"],
+                    ["113014 МКОУ 'Чилгирская СОШ' (1)", 73,      "color: #6699ff;"],
+                    ["101012 МБОУ 'СОШ №17  им.Д.Н. Кугультинова' (12)", 72.25,   "color: #66ff66;"],
+                    ["102001 МКОУ 'Городовиковская СОШ№1 им.Г.Лазарева' (2)", 71,      "color: #6699ff;"],
+                    ["101019 МБОУ 'КЭГ' (14)", 65.29,   "color: #66ff66;"],
+                    ["104003 МКОУ 'Лаганская СОШ №3 им.Очирова Л-Г.Б' (2)", 65,      "color: #6699ff;"]
+                ]);
+                
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns(    [0, 1,
+                                {   calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation" },
+                                2]);
+
+            var options = {
+                vAxis: {
+                    textStyle: {
+                        fontName: 'Arial',
+                        fontSize: 12
+                    }
+                },
+                chartArea:{left:350},
+                annotations: {
+                  textStyle: {
+                    fontName: 'Arial',
+                    fontSize: 12,
+                    bold: true,
+                  }
+                },
+                
+                title: "Топ 10 образовательных учереждений",
+                width: 1000,
+                height: 700,
+                bar: {groupWidth: "70%"},
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+                chart.draw(view, options);
+            } 
+        </script>
+    </head>
+    <body>
+        <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+    </body>
+</html>
+
+
